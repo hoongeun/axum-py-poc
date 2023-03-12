@@ -6,10 +6,11 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+async-trait = "0.1.64"
 axum = "0.6.4"
 tokio = { version = "1.25.0", features = ["full"] }
 serde = { version = "1.0.144", features = ["derive"] }
-redis = "0.22.1"
+rustis = { version = "0.8.2", features = ["pool", "redis-stack", "tokio-tls"] }
 log4rs = "1.1.1"
 tracing = "0.1"
 tracing-subscriber = "0.3"
@@ -17,4 +18,6 @@ rustpython-compiler = { git = "https://github.com/RustPython/RustPython", rev = 
 rustpython-parser = { git = "https://github.com/RustPython/RustPython", rev = "d1811c72e72c51b849b0ad7b3f0efb2814a16bf2" }
 rustpython-pylib = { git = "https://github.com/RustPython/RustPython", rev = "d1811c72e72c51b849b0ad7b3f0efb2814a16bf2", optional = true, default-features = false }
 rustpython-stdlib = { git = "https://github.com/RustPython/RustPython", rev = "d1811c72e72c51b849b0ad7b3f0efb2814a16bf2", optional = true, default-features = false }
-rustpython-vm = { git = "https://github.com/RustPython/RustPython", rev = "d1811c72e72c51b849b0ad7b3f0efb2814a16bf2" }
+rustpython-vm = { git = "https://github.com/RustPython/RustPython", rev = "d1811c72e72c51b849b0ad7b3f0efb2814a16bf2", features = ["jit"] }
+bb8 = "0.8.0"
+serde_json = "1.0.93"
